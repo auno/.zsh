@@ -1,128 +1,47 @@
-# vim: set ts=4 sw=4 expandtab:
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
 
-if [ -r "$HOME/.zsh/zshrc-functions" ]; then 
-. "$HOME/.zsh/zshrc-functions"
-fi
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="robbyrussell"
 
-#
-#  VARIABLES
-#
-HISTFILE=~/.zsh_history
-SAVEHIST=25000
-HISTSIZE=25000
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#
-# EXPORTS
-#
-export BROWSER=firefox
-export EDITOR=vim
-export PATH="$HOME/.local/bin:$PATH"
-export PAGER=less
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
 
-if [ "$DISPLAY" != "" ]; then
-    export TERM=xterm-256color
-fi
+# Comment this out to disable bi-weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
 
-#
-#  OPTIONS
-#
-setopt AUTO_CONTINUE
-setopt AUTO_PUSHD
-setopt EXTENDED_HISTORY
-setopt HIST_IGNORE_DUPS
-setopt HIST_SAVE_NO_DUPS
-setopt INC_APPEND_HISTORY
-setopt NO_AUTO_MENU
-setopt NO_AUTO_REMOVE_SLASH
-setopt NO_CHECK_JOBS
-setopt NO_CLOBBER
-setopt NO_HUP
-setopt PUSHD_SILENT
+# Uncomment to change how often before auto-updates occur? (in days)
+# export UPDATE_ZSH_DAYS=13
 
-#
-#  ALIAS
-#
-alias less=less\ -S
-alias ll=ls\ -l
-alias la=ls\ -a
-alias l=ls
-alias lla=ls\ -la
-alias g=gvim\ --remote-silent
-alias diff=diff\ -u
-alias gvim=UBUNTU_MENUPROXY=\ gvim
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
 
-svndiff () {
-    if which colordiff > /dev/null; then
-        svn diff "${@}" | colordiff | less -FXR
-    else
-        svn diff | less -FXR
-    fi
-}
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-#
-#  ZSH MODULES
-#
-autoload -U colors; colors
-autoload -U compinit; compinit
-autoload -U edit-command-line; zle -N edit-command-line
+# Uncomment following line if you want to disable command autocorrection
+# DISABLE_CORRECTION="true"
 
-#
-# COMPLETION
-#
-zmodload -i zsh/complist
-zstyle ':completion:*' list-colors `dircolors | tr : ' '`
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
 
-# Case insensitive autocompletion
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+# Uncomment following line if you want to disable marking untracked files under
+# VCS as dirty. This makes repository status check for large repositories much,
+# much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-#
-#  KEYBINDINGS
-#
-bindkey -e # Set initial keymap to emacs emulation.
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git)
 
-bindkey '^[[1~' beginning-of-line                   # HOME
-bindkey '^[[2~' overwrite-mode                      # INSERT
-bindkey '^[[3~' delete-char                         # DELETE
-bindkey '^[[4~' end-of-line                         # END
-bindkey '^[[5~' history-beginning-search-backward   # PAGE UP
-bindkey '^[[6~' history-beginning-search-forward    # PAGE DOWN
-bindkey '^[[H'	beginning-of-line                   # HOME
-bindkey '^[[F'	end-of-line                         # END
+source $ZSH/oh-my-zsh.sh
 
-bindkey '^Xe'   edit-command-line
-
-#
-#  MISC
-#
-
-#
-#  PROMPT
-#
-
-if [ "$UID" = "0" ]; then
-    export PROMPT=" %{${fg_bold[red]}%}%m %{$fg_bold[default]%}>%{$fg_no_bold[default]%}> %{$reset_color%}"
-    export RPROMPT="%{$fg_no_bold[default]%}%~ %{$fg_bold[default]%}[%(?.%{$fg_bold[default]%}0.%{$fg_bold[red]%}%?)%{$fg_bold[default]%}]%{$reset_color%}"
-else
-    export PROMPT=" %{${fg_bold[green]}%}%n@%m %{$fg_bold[default]%}>%{$fg_no_bold[default]%}> %{$reset_color%}"
-    export RPROMPT="%{$fg_no_bold[default]%}%~ %{$fg_bold[blue]%}[%(?.%{$fg_bold[default]%}0.%{$fg_bold[red]%}%?)%{$fg_bold[blue]%}]%{$reset_color%}"
-fi
-
-#
-# SYSTEM/HOST SPECIFIC CONFIGURATION
-#
-
-SYSTEM=`uname -s`
-SYSTEM=`toLower $SYSTEM`
-
-if [ -r "$HOME/.zsh/zshrc-$SYSTEM" ]; then
-    source "$HOME/.zsh/zshrc-$SYSTEM"
-fi
-
-if [ -r "$HOME/.zsh/zshrc-$HOST" ]; then 
-    source "$HOME/.zsh/zshrc-$HOST"
-fi
-
-if [ -r "$HOME/.locale" ]; then
-    source "$HOME/.locale"
-fi
-
+# Customize to your needs...
