@@ -14,7 +14,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(colored_man debian git mercurial rvm)
+plugins=(colored_man debian git rvm)
 
 # Set variables before loading oh-my-zsh as some of them are referenced therein
 HISTFILE=~/.zsh_history

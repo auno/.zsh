@@ -14,13 +14,6 @@ auno_precmd() {
         ZSH_THEME_GIT_PROMPT_CLEAN=""
 
         VCS_PROMPT=" %{$fg_no_bold[yellow]%}<$(git_prompt_info)>"
-    elif [[ "$(in_hg)" == "1" ]]; then
-        ZSH_THEME_HG_PROMPT_PREFIX="hg:"
-        ZSH_THEME_HG_PROMPT_SUFFIX=""
-        ZSH_THEME_HG_PROMPT_DIRTY="⚡"
-        ZSH_THEME_HG_PROMPT_CLEAN=""
-
-        VCS_PROMPT=" %{$fg_no_bold[yellow]%}<$(hg_prompt_info)>"
     else
         VCS_PROMPT=''
     fi
