@@ -8,6 +8,9 @@ ZSH_CUSTOM=$HOME/.zsh/oh-my-zsh-custom
 # time that oh-my-zsh is loaded.
 ZSH_THEME="auno"
 
+# Uncomment following line if you want to disable command autocorrection
+DISABLE_CORRECTION="true"
+
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
