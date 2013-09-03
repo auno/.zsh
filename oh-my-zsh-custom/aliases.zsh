@@ -5,4 +5,4 @@ alias ctags=ctags-exuberant
 alias ll=ls\ -lh
 alias la=ls\ -a
 alias l=ls
-alias lla=ls\ -la
+alias lla=ll\ -a
