@@ -20,9 +20,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(colored_man debian git rvm)
 
 # Set variables before loading oh-my-zsh as some of them are referenced therein
-HISTFILE=~/.zsh_history
-SAVEHIST=25000
-HISTSIZE=25000
 export BROWSER=firefox
 export EDITOR=vim
 export PATH="$HOME/.local/bin:$PATH"
