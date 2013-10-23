@@ -21,6 +21,11 @@ if [[ "$HOST" == "auno01" ]]; then
     #
     xset -b
 
+    # Load JDK chooser into a shell session *as a function*
+    if [ "$UID" != "0" ]; then
+        [[ -s "$HOME/.local/opt/jdk-chooser/scripts/jdk" ]] && source "$HOME/.local/opt/jdk-chooser/scripts/jdk"
+    fi
+
     # Load RVM into a shell session *as a function*
     if [ "$UID" != "0" ]; then
         [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
