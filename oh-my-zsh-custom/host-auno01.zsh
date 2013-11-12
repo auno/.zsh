@@ -14,7 +14,7 @@ if [[ "$HOST" == "auno01" ]]; then
     #
     alias diff=colordiff\ -u
     alias ack=ack-grep
-    alias make=make\ -j8
+    alias make=make\ -j32
 
     #
     # MISC
