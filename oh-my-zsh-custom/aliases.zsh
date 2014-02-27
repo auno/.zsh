@@ -7,3 +7,4 @@ alias la=ls\ -a
 alias l=ls
 alias lla=ll\ -a
 alias less=less\ -S
+alias m=mount\ \|\ column\ -t
