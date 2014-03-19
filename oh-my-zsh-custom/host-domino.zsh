@@ -1,1 +1,0 @@
-host-auno02.zsh

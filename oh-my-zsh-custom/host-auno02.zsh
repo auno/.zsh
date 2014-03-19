@@ -1,4 +1,4 @@
-if [[ "$HOST" == "auno02" ]]; then
+if [[ "$HOST" == "auno02" -o "$HOST" == "domino" ]]; then
     #
     # EXPORTS
     #
