@@ -9,7 +9,6 @@ if [[ "$HOST" == "auno02" || "$HOST" == "domino" ]]; then
     # ALIAS
     #
     alias diff=colordiff\ -u
-    alias ack=ack-grep
     alias make=make\ -j4
 
     #

@@ -11,7 +11,6 @@ if [[ "$HOST" == "skynet" ]]; then
     alias telnet=ktelnet
     alias diff=colordiff\ -u
     alias make=make\ -j4
-    alias ack=ack-grep
     alias s=stopalarm\ -s
 
     if [ "$DISPLAY" != "" ]; then
