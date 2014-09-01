@@ -18,6 +18,7 @@ auno_precmd() {
         VCS_PROMPT=''
     fi
 }
+autoload -U add-zsh-hook
 add-zsh-hook precmd auno_precmd
 
 export PROMPT=" %{${fg_bold[$USER_PROMPT_COLOR]}%}$USER_PROMPT %{$fg_bold[default]%}>%{$fg_no_bold[default]%}> %{$reset_color%}"
